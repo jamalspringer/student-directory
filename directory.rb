@@ -22,10 +22,10 @@ def print_header
   puts "-------------"
 end
 def print(students)
-  count = 1
+  count = 0
   students.each do |student|
-    if student[:name][0].to_s.downcase == "j"
-      puts "#{count}. #{student[:name]} (#{student[:cohort]} cohort)"
+    if student[:name][0].to_s.downcase == "j" && student[:name].length < 12
+      puts "#{count + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
       count = count + 1
     end
   end
