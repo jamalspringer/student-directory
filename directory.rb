@@ -24,8 +24,10 @@ end
 def print(students)
   count = 1
   students.each do |student|
-    puts "#{count}. #{student[:name]} (#{student[:cohort]} cohort)"
-    count = count + 1
+    if student[:name][0].to_s.downcase == "j"
+      puts "#{count}. #{student[:name]} (#{student[:cohort]} cohort)"
+      count = count + 1
+    end
   end
 end
 def print_footer(names)
