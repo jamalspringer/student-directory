@@ -23,13 +23,19 @@ def print_header
 end
 def print(students)
   count = 0
-  students.each do |student|
-    if student[:name][0].to_s.downcase == "j" && student[:name].length < 12
-      puts "#{count + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
-      count = count + 1
+  max_count = students.length
+  until count == max_count
+    students.each do |student|
+      if student[:name][0].to_s.downcase == "j" && student[:name].length < 12
+        puts "#{count + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+        count = count + 1
+      else
+        count = count + 1
+      end
     end
   end
 end
+
 def print_footer(names)
   puts "Overall, we have #{names.count} great students"
 end
